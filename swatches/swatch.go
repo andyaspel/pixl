@@ -7,7 +7,6 @@ import (
 	"fyne.io/fyne/v2/canvas"
 	"fyne.io/fyne/v2/widget"
 	"github.com/andyaspel/pixel/apptypes"
-	"github.com/andyaspel/pixel/swatches"
 )
 
 type Swatch struct {
@@ -15,7 +14,7 @@ type Swatch struct {
 	Selected     bool
 	Color        color.Color
 	SwatchIndex  int
-	clickHandler func(swatches *Swatch)
+	clickHandler func(s *Swatch)
 }
 
 func (s *Swatch) SetColor(c color.Color) {
@@ -24,21 +23,21 @@ func (s *Swatch) SetColor(c color.Color) {
 }
 
 func NewSwatch(state *apptypes.State, color color.Color, index int, onClick func(s *Swatch)) *Swatch {
-	s := &Swatch{
+	swatch := &Swatch{
 		Selected:     false,
 		Color:        color,
 		SwatchIndex:  index,
 		clickHandler: onClick,
 	}
-	swatches.ExtendBaseWidget(s)
-	return s
+	swatch.ExtendBaseWidget(swatch)
+	return swatch
 }
 
 func (s *Swatch) CreateSwatch() fyne.WidgetRenderer {
 	square := canvas.NewRectangle(s.Color)
 	objects := []fyne.CanvasObject{square}
 	return &SwatchRednerer{
-		square:  *square,
+		pixel:   *square,
 		objects: objects,
 		parent:  s,
 	}

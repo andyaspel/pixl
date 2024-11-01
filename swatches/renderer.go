@@ -8,13 +8,13 @@ import (
 )
 
 type SwatchRednerer struct {
-	square  canvas.Rectangle
+	pixel   canvas.Rectangle
 	objects []fyne.CanvasObject
 	parent  *Swatch
 }
 
 func (r *SwatchRednerer) MinSize() fyne.Size {
-	return r.square.MinSize()
+	return r.pixel.MinSize()
 }
 
 func (r *SwatchRednerer) Layout(size fyne.Size) {
@@ -23,14 +23,14 @@ func (r *SwatchRednerer) Layout(size fyne.Size) {
 
 func (r *SwatchRednerer) Refresh() {
 	r.Layout(fyne.NewSize(20, 20))
-	r.square.FillColor = r.parent.Color
+	r.pixel.FillColor = r.parent.Color
 	if r.parent.Selected {
-		r.square.StrokeWidth = 3
-		r.square.StrokeColor = color.NRGBA{255, 255, 255, 255}
-		r.objects[0] = &r.square
+		r.pixel.StrokeWidth = 3
+		r.pixel.StrokeColor = color.NRGBA{255, 255, 255, 255}
+		r.objects[0] = &r.pixel
 	} else {
-		r.square.StrokeWidth = 0
-		r.objects[0] = &r.square
+		r.pixel.StrokeWidth = 0
+		r.objects[0] = &r.pixel
 	}
 	canvas.Refresh(r.parent)
 }
