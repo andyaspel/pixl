@@ -1,6 +1,7 @@
 package swatches
 
 import (
+	"fmt"
 	"image/color"
 
 	"fyne.io/fyne/v2"
@@ -29,14 +30,18 @@ func NewSwatch(state *apptypes.State, color color.Color, swatchIndex int, clickH
 		SwatchIndex:  swatchIndex,
 		clickHandler: clickHandler,
 	}
+	fmt.Printf("NewSwatch-func -\t%v\n", swatch)
 
-	swatch.ExtendBaseWidget(swatch)
+	swatch.ExtendBaseWidget(_)
 	return swatch
 }
 
 func (s *Swatch) CreateSwatch() fyne.WidgetRenderer {
 	square := canvas.NewRectangle(s.Color)
 	objects := []fyne.CanvasObject{square}
+	fmt.Printf("CreateSwatch-func -\t%v,\t %v\n", square, s)
+	fmt.Printf("CreateSwatch-func -\t%v,\n", &SwatchRednerer{pixel: *square, objects: objects, parent: s})
+
 	return &SwatchRednerer{
 		pixel:   *square,
 		objects: objects,

@@ -1,6 +1,7 @@
 package swatches
 
 import (
+	"fmt"
 	"image/color"
 
 	"fyne.io/fyne/v2"
@@ -28,14 +29,19 @@ func (r *SwatchRednerer) Refresh() {
 		r.pixel.StrokeWidth = 3
 		r.pixel.StrokeColor = color.NRGBA{255, 255, 255, 255}
 		r.objects[0] = &r.pixel
+		fmt.Printf("Refresh-func if -\t%v\n", r)
+
 	} else {
 		r.pixel.StrokeWidth = 0
 		r.objects[0] = &r.pixel
+		fmt.Printf("Refresh-func else -\t%v\n", r)
+
 	}
 	canvas.Refresh(r.parent)
 }
 
 func (r *SwatchRednerer) Objects() []fyne.CanvasObject {
+	fmt.Printf("Objects-func -\t%v\n", r)
 	return r.objects
 }
 
