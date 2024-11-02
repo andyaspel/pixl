@@ -1,4 +1,4 @@
-package swatches
+package swatch
 
 import (
 	"fmt"
@@ -32,7 +32,7 @@ func NewSwatch(state *apptypes.State, color color.Color, swatchIndex int, clickH
 	}
 	fmt.Printf("NewSwatch-func -\t%v\n", swatch)
 
-	swatch.ExtendBaseWidget(_)
+	swatch.ExtendBaseWidget(swatch)
 	return swatch
 }
 

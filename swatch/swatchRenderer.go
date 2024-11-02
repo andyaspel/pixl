@@ -1,4 +1,4 @@
-package swatches
+package swatch
 
 import (
 	"fmt"
