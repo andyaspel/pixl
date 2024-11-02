@@ -36,13 +36,12 @@ func NewSwatch(state *apptypes.State, color color.Color, swatchIndex int, clickH
 	return swatch
 }
 
-func (s *Swatch) CreateSwatch() fyne.WidgetRenderer {
+func (s *Swatch) CreateRenderer() fyne.WidgetRenderer {
 	square := canvas.NewRectangle(s.Color)
 	objects := []fyne.CanvasObject{square}
 	fmt.Printf("CreateSwatch-func -\t%v,\t %v\n", square, s)
-	fmt.Printf("CreateSwatch-func -\t%v,\n", &SwatchRednerer{pixel: *square, objects: objects, parent: s})
 
-	return &SwatchRednerer{
+	return &SwatchRenderer{
 		pixel:   *square,
 		objects: objects,
 		parent:  s,
