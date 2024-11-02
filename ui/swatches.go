@@ -28,5 +28,5 @@ func BuildSwatches(app *AppInit) *fyne.Container {
 		app.Swatches = append(app.Swatches, s)
 		swatchContainer = append(swatchContainer, s)
 	}
-	return container.NewGridWrap(fyne.NewSize(20, 20), swatchContainer...)
+	return container.NewGridWrap(fyne.NewSize(20.0, 20.0), swatchContainer...)
 }
