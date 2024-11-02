@@ -1,4 +1,4 @@
-module github.com/andyaspel/pixel
+module github.com/andyaspel/pixl
 
 go 1.23.2
 
