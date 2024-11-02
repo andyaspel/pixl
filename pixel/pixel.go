@@ -5,7 +5,7 @@ import (
 
 	"fyne.io/fyne/v2/app"
 	"github.com/andyaspel/pixl/apptypes"
-	"github.com/andyaspel/pixl/swatches"
+	"github.com/andyaspel/pixl/swatch"
 	"github.com/andyaspel/pixl/ui"
 )
 
@@ -19,7 +19,7 @@ func main() {
 	appInit := ui.AppInit{
 		Window:   window,
 		State:    &state,
-		Swatches: make([]*swatches.Swatch, 0, 64),
+		Swatches: make([]*swatch.Swatch, 0, 64),
 	}
 	ui.Setup(&appInit)
 	appInit.Window.ShowAndRun()

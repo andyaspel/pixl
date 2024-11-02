@@ -5,14 +5,14 @@ import (
 
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/container"
-	"github.com/andyaspel/pixl/swatches"
+	"github.com/andyaspel/pixl/swatch"
 )
 
 func BuildSwatches(app *AppInit) *fyne.Container {
 	swatchContainer := make([]fyne.CanvasObject, 0, 64)
 	for i := 0; i < cap(app.Swatches); i++ {
 		initColor := color.NRGBA{255, 255, 255, 255}
-		s := swatches.NewSwatch(app.State, initColor, i, func(s *swatches.Swatch) {
+		s := swatch.NewSwatch(app.State, initColor, i, func(s *swatch.Swatch) {
 			for j := 0; j < len(app.Swatches); j++ {
 				app.Swatches[j].Selected = false
 				swatchContainer[j].Refresh()
