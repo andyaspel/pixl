@@ -2,8 +2,8 @@ package ui
 
 import (
 	"fyne.io/fyne/v2"
-	"github.com/andyaspel/pixel/apptypes"
-	"github.com/andyaspel/pixel/swatches"
+	"github.com/andyaspel/pixl/apptypes"
+	"github.com/andyaspel/pixl/swatches"
 )
 
 type AppInit struct {

@@ -4,9 +4,9 @@ import (
 	"image/color"
 
 	"fyne.io/fyne/v2/app"
-	"github.com/andyaspel/pixel/apptypes"
-	"github.com/andyaspel/pixel/swatches"
-	"github.com/andyaspel/pixel/ui"
+	"github.com/andyaspel/pixl/apptypes"
+	"github.com/andyaspel/pixl/swatches"
+	"github.com/andyaspel/pixl/ui"
 )
 
 func main() {

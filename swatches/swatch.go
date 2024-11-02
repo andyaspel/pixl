@@ -6,7 +6,7 @@ import (
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/canvas"
 	"fyne.io/fyne/v2/widget"
-	"github.com/andyaspel/pixel/apptypes"
+	"github.com/andyaspel/pixl/apptypes"
 )
 
 type Swatch struct {

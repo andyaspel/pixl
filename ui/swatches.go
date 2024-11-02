@@ -5,7 +5,7 @@ import (
 
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/container"
-	"github.com/andyaspel/pixel/swatches"
+	"github.com/andyaspel/pixl/swatches"
 )
 
 func BuildSwatches(app *AppInit) *fyne.Container {
