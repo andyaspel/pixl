@@ -11,7 +11,7 @@ import (
 
 func main() {
 	init := app.New()
-	window := init.NewWindow("pixel")
+	window := init.NewWindow("Pixl")
 	state := apptypes.State{
 		BrushColor:    color.NRGBA{255, 255, 255, 255},
 		SwatchSeleted: 0,
