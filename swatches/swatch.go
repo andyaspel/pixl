@@ -22,15 +22,15 @@ func (s *Swatch) SetColor(c color.Color) {
 	s.Refresh()
 }
 
-func NewSwatch(state *apptypes.State, color color.Color, index int, onClick func(s *Swatch)) *Swatch {
+func NewSwatch(state *apptypes.State, color color.Color, swatchIndex int, clickHandler func(s *Swatch)) *Swatch {
 	swatch := &Swatch{
 		Selected:     false,
 		Color:        color,
-		SwatchIndex:  index,
-		clickHandler: onClick,
+		SwatchIndex:  swatchIndex,
+		clickHandler: clickHandler,
 	}
 
-	swatch.ExtendBaseWidget(swatch)
+	// swatch.ExtendBaseWidget(swatch)
 	return swatch
 }
 
