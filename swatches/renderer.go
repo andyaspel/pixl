@@ -22,7 +22,7 @@ func (r *SwatchRednerer) Layout(size fyne.Size) {
 }
 
 func (r *SwatchRednerer) Refresh() {
-	r.Layout(fyne.NewSize(20, 20))
+	r.Layout(fyne.NewSquareSize(20))
 	r.pixel.FillColor = r.parent.Color
 	if r.parent.Selected {
 		r.pixel.StrokeWidth = 3
