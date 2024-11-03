@@ -1,7 +1,6 @@
 package swatch
 
 import (
-	"fmt"
 	"image/color"
 
 	"fyne.io/fyne/v2"
@@ -23,25 +22,25 @@ func (r *SwatchRenderer) Layout(size fyne.Size) {
 }
 
 func (r *SwatchRenderer) Refresh() {
-	r.Layout(fyne.NewSize(20, 20))
+	r.Layout(fyne.NewSize(50, 50))
 	r.pixel.FillColor = r.parent.Color
 	if r.parent.Selected {
-		r.pixel.StrokeWidth = 3
-		r.pixel.StrokeColor = color.NRGBA{255, 255, 255, 255}
+		r.pixel.StrokeWidth = 1
+		r.pixel.StrokeColor = color.NRGBA{100, 0, 0, 0}
 		r.objects[0] = &r.pixel
-		fmt.Printf("Refresh-func if -\t%v\n", r)
+		// fmt.Printf("Refresh-func if -\t%v\n", r)
 
 	} else {
-		r.pixel.StrokeWidth = 0
+		r.pixel.StrokeWidth = 2
 		r.objects[0] = &r.pixel
-		fmt.Printf("Refresh-func else -\t%v\n", r)
+		// fmt.Printf("Refresh-func else -\t%v\n", r)
 
 	}
 	canvas.Refresh(r.parent)
 }
 
 func (r *SwatchRenderer) Objects() []fyne.CanvasObject {
-	fmt.Printf("Objects-func -\t%v\n", r)
+	// fmt.Printf("Objects-func -\t%v\n", r)
 	return r.objects
 }
 

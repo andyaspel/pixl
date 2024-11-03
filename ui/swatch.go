@@ -9,9 +9,9 @@ import (
 )
 
 func BuildSwatches(app *AppInit) *fyne.Container {
-	swatchContainer := make([]fyne.CanvasObject, 0, 64)
+	swatchContainer := make([]fyne.CanvasObject, 0, 32)
 	for i := 0; i < cap(app.Swatches); i++ {
-		initColor := color.NRGBA{255, 255, 255, 255}
+		initColor := color.NRGBA{100, 0, 0, 255}
 		s := swatch.NewSwatch(app.State, initColor, i, func(s *swatch.Swatch) {
 			for j := 0; j < len(app.Swatches); j++ {
 				app.Swatches[j].Selected = false
@@ -28,5 +28,5 @@ func BuildSwatches(app *AppInit) *fyne.Container {
 		app.Swatches = append(app.Swatches, s)
 		swatchContainer = append(swatchContainer, s)
 	}
-	return container.NewGridWrap(fyne.NewSize(20.0, 20.0), swatchContainer...)
+	return container.NewGridWrap(fyne.NewSize(50, 50), swatchContainer...)
 }

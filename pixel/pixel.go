@@ -19,7 +19,7 @@ func main() {
 	appInit := ui.AppInit{
 		Window:   window,
 		State:    &state,
-		Swatches: make([]*swatch.Swatch, 0, 64),
+		Swatches: make([]*swatch.Swatch, 0, 32),
 	}
 	ui.Setup(&appInit)
 	appInit.Window.ShowAndRun()
